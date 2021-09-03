@@ -1,0 +1,86 @@
+﻿@using mvcproje.Models.Entit
+@model List<iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_otelvitrin.cshtml";
+}
+
+<html>
+<body>
+    <!--w3l-header-->
+    <!-- //w3l-header -->
+    <section class="w3l-breadcrumb">
+        <div class="breadcrum-bg py-sm-5 py-4">
+            <div class="container py-lg-3">
+                <h2>Bize ulaşın</h2>
+                <p><a href="/AnaSayfa/Index/">Anasayfa</a> &nbsp; / &nbsp; İletişim</p>
+
+            </div>
+        </div>
+    </section>
+    @foreach (var x in Model)
+    {
+
+
+        <section class="w3l-contact-1 py-5">
+            <div class="contacts-9 py-lg-5 py-sm-4">
+                <div class="container">
+                    <div class="d-grid contact-view">
+                        <div class="cont-details">
+
+                            <h3 class="title-big">İletişim bilgilerimiz </h3>
+                        </div>
+                        <div class="map-content-9">
+                            <p>
+                                @x.Aciklama
+                            </p>
+                        </div>
+                    </div>
+                    <div class="map-iframe my-5">
+                        <iframe src="@x.Koordinat"
+                                width="100%" height="300" frameborder="0" style="border: 0px; pointer-events: none;"
+                                allowfullscreen=""></iframe>
+                    </div>
+                    <div class="d-grid contact-view">
+                        <div class="cont-details">
+                            <div class="cont-top">
+                                <div class="cont-left text-center">
+                                    <span class="fa fa-phone text-primary"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Telefon</h6>
+                                    <p>@x.Telefon</p>
+                                </div>
+                            </div>
+                            <div class="cont-top margin-up">
+                                <div class="cont-left text-center">
+                                    <span class="fa fa-envelope-o text-primary"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Email </h6>
+                                    <p>@x.Mail</p>
+                                </div>
+                            </div>
+                            <div class="cont-top margin-up">
+                                <div class="cont-left text-center">
+                                    <span class="fa fa-map-marker text-primary"></span>
+                                </div>
+                                <div class="cont-right">
+                                    <h6>Adres</h6>
+                                    <p>@x.Adres</p>
+                                </div>
+                            </div>
+                        </div>
+                        @Html.Action("MesajGonder", "iletisim")
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /contact1 -->
+    }
+
+
+</body>
+
+</html>
+

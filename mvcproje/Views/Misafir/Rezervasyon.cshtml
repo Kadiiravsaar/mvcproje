@@ -1,0 +1,26 @@
+﻿@using mvcproje.Models.Entit
+@model List<TblRez>
+@{
+    ViewBag.Title = "Rezervasyon";
+    Layout = "~/Views/Shared/_Misafirler.cshtml";
+}
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Misafir Ad soyad</th>
+        <th>Giriş tarih</th>
+        <th>Çıkış tarih</th>
+        <th>Kişi</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.RezAd </td>
+            <td>@(((DateTime)x.Giris).ToString("dd-MMM-yyy")) </td>
+            <td>@(((DateTime)x.Cikis).ToString("dd-MMM-yyy"))</td>
+            <td>@x.Kisi </td>
+        </tr>
+
+    }
+
+</table>
+

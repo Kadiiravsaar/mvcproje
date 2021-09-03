@@ -1,0 +1,18 @@
+﻿@model mvcproje.Models.Entit.mesajlar
+<div class="map-content-9 mt-lg-0 mt-4">
+    <form method="post">
+        <div class="twice-two">
+            <input type="text" class="form-control" name="Gonderen"  placeholder="Adınız"
+                   required="">
+            <input type="email" class="form-control" name="Mail" placeholder="Email"
+                   required="">
+        </div>
+        <div class="twice">
+            <input type="text" class="form-control" name="Konu" 
+                   placeholder="Konu" required="">
+        </div>
+        <textarea name="Mesaj" class="form-control"  placeholder="Meajınız"
+                  required=""></textarea>
+        <button type="submit" class="btn btn-contact">Send Message</button>
+    </form>
+</div>

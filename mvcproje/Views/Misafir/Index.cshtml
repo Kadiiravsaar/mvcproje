@@ -1,0 +1,23 @@
+﻿@model mvcproje.Models.Entit.YeniKayit
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Misafirler.cshtml";
+}
+@using (Html.BeginForm("MisafirGuncelle", "Misafir", FormMethod.Post))
+{
+
+    <div class="form-group mt-4">
+        @Html.HiddenFor(x => x.ID, new { @class = "form-control" })
+        @Html.Label("Ad soyad ")
+        @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })<br />
+
+        @Html.Label("Telefon")
+        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })<br />
+
+        @Html.Label("Sifre")
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })<br />
+        <button class="btn btn-warning">Güncelle</button>
+
+    </div>
+}
